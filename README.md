@@ -16,8 +16,9 @@ myRegex.build("http://jwzx.cqupt.edu.cn/jwzxtmp/pubBjsearch.php?action=bjStu", n
             public void onFinish(MyRegex myRegex) {
                 myRegex.RegexInclude("<tbo","tbody>");
                 final List<String> list = myRegex.RegexExcept("bj=","'");
-                //所有班级号就这么两步解析出来了，现在只需要显示在textview上
-                runOnUiThread(new Runnable() {
+                //所有班级号就这么两步解析出来了，现在只需要显示在textview上
+                //其实只需要myRegex.RegexExcept("bj=","'");这一步就够了，分两步是为了保险，避免误判
+                runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
                         String a = "";
