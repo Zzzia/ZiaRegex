@@ -26,12 +26,12 @@ public class MyRegex {
     //url地址中的html内容
     public static String html;
     //保存下这个类
-    private MyRegex myRegex;
+    private static MyRegex myRegex;
     //用户设置是否显示log,默认不显示
     private static boolean isLog = false;
     //保存用户上一次操作的集合id
     private static int Id = 0;
-    //解析方式
+    //解析方式,包含和不包含两种
     private final static int TYPE_INCLUDE = 1;
     private final static int TYPE_EXCEPT = 2;
 
@@ -97,6 +97,7 @@ public class MyRegex {
      * @return 正则提取的内容
      */
     public List<String> RegexInclude(String start,String end,int id,int target){
+        Id++;//操作数加一，但是id不变传进去解析
         return regex(start,end,id,target,TYPE_INCLUDE);
     }
 
@@ -120,6 +121,7 @@ public class MyRegex {
      * @return
      */
     public List<String>RegexExcept(String start,String end,int id,int target){
+        Id++;
         return regex(start,end,id,target,TYPE_EXCEPT);
     }
 
@@ -143,6 +145,7 @@ public class MyRegex {
 
     //----------------->
     //以下是从网络中获取html的方法，模板类，没有意义
+
     public interface BuildCallback {
         void onFinish(MyRegex myRegex);
     }
