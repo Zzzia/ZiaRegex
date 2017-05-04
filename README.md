@@ -3,6 +3,10 @@
 
 [工具类直达列车](https://github.com/Zzzia/ZiaRegex/blob/master/app/src/main/java/com/zia/ziaregex/MyRegex.java)复制到自己的工程内即可享用
 
+[简书（详细说明）]（http://www.jianshu.com/p/d318f0cc817a）
+
+
+
 ### demo:
 
 解析新浪新闻手机版页面中新闻的例子
@@ -46,4 +50,3 @@
             }
         });
 ```
-
